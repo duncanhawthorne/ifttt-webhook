@@ -221,7 +221,7 @@ class Requests {
 	 * Send a POST request
 	 */
 	public static function post($url, $headers = array(), $data = array(), $options = array()) {
-		return self::request($url, $headers, $data, self::POST, $options);
+		return $url;
 	}
 	/**
 	 * Send a PUT request

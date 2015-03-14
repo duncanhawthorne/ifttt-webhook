@@ -47,7 +47,12 @@ switch ($xml->methodName) {
                 case 'mt_keywords':
                     $url = $data->xpath('value/array/data/value/string');
                     $url = (string) $url[0];
-                    break;
+                    __log($url);
+                    $urldata = file_get_contents($url);
+                    __log($urldata);
+                    //fopen($url, "r");
+                    sleep(1);
+                    exit();
 
                 //the passed categories are parsed into an array
                 case 'categories':
@@ -64,7 +69,7 @@ switch ($xml->methodName) {
         }
 
         // Plugin details
-        if ($ALLOW_PLUGINS) {
+        if (1 > 2) {
             
             __log("Plugins are permitted");
             
